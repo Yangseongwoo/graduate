@@ -75,7 +75,7 @@ body
 header
 {
   margin-top:30px;
-  position:absolute;
+/*   position:absolute; */
   z-index:5;
   width:420px;
   padding-top:10px;
