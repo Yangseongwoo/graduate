@@ -533,3 +533,44 @@ body {
         color: var(--color-white);
     }
 }
+
+/* iOS 대응을 위한 스타일 추가 */
+.select_mate {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.select_mate select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* iOS에서 터치 이벤트 보장을 위한 추가 스타일 */
+.selecionado_opcion,
+.icon_select_mate {
+    pointer-events: auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* iOS 기기만을 위한 스타일 */
+    .select_mate {
+        cursor: pointer;
+    }
+    
+    .cont_select_int {
+        -webkit-overflow-scrolling: touch;
+    }
+}
